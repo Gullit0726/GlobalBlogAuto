@@ -1,0 +1,60 @@
+{
+  "name": "gemini-global-blog-automation",
+  "version": "2.0.0",
+  "description": "🚀 Gemini 기반 글로벌 블로그 완전자동화 시스템",
+  "main": "main.py",
+  "scripts": {
+    "dev": "python main.py",
+    "start": "python main.py",
+    "build": "echo 'Building...'",
+    "deploy": "vercel deploy",
+    "deploy:prod": "vercel deploy --prod",
+    "test": "python -m pytest tests/",
+    "setup": "pip install -r requirements.txt"
+  },
+  "keywords": [
+    "gemini",
+    "blog",
+    "automation",
+    "ai",
+    "revenue",
+    "global",
+    "vercel"
+  ],
+  "author": "Global Blog Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "python": ">=3.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/gemini-global-blog-automation.git"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "vercel": {
+    "framework": "static",
+    "functions": {
+      "main.py": {
+        "runtime": "python3.9"
+      }
+    },
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/main.py"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/static/$1"
+      }
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/gemini-global-blog-automation/issues"
+  },
+  "homepage": "https://github.com/your-username/gemini-global-blog-automation#readme"
+}
